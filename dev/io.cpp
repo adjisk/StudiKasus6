@@ -3,10 +3,16 @@ using namespace std;
 
 void nilai::input(){
 
-  cout<<"Masukkan Jumlah matkul : ";
+  cout<<"jumlah mahasiswa : ";
   cin>>jml;
-
- for(int i=0; i<jml; i++){
+  cout<<"jumlah matkul : ";
+    cin>>jml_matkul;
+  cout<<"\n===============================================================================\n";
+ for(int j=0; j<jml; j++){
+   cout<<"Nama : ";
+ //  cin.getline(nama, sizeof(nama[j]));
+   cin>>nama[j];
+   for(int i=0; i<jml_matkul; i++){
     cout<<"\nMasukkan nama matkul : ";
       cin>>matkul[i];
     cout<<"Masukkan nilai tugas : ";
@@ -15,62 +21,69 @@ void nilai::input(){
     cin>>uts[i];
    cout<<"Masukkan nilai UAS : ";
     cin>>uas[i];
-    nt = (tugas[i] + uts[i] + uas[i]);
-   cout<<"Nilai Akhir : "<<nt/3;
-  }
-  // cout<<"\nNilai Pweb";
-  // for(int i=0; i<1; i++){
-  // cout<<"\nMasukkan nilai tugas : ";
-  //  cin>>tugas[i];
-  //  cout<<"Masukkan nilai uts : ";
-  //   cin>>uts[i];
-  //  cout<<"Masukkan nilai UAS : ";
-  //   cin>>uas[i];
-    
-  //    nt = (tugas[i] + uts[i] + uas[i]);
-  //  cout<<"Nilai Akhir : "<<nt/3;
-  // }
-  // cout<<"\nNilai Matdis";
-  // for(int i=0; i<1; i++){
-  // cout<<"\nMasukkan nilai tugas : ";
-  //  cin>>tugas[i];
-  //  cout<<"Masukkan nilai uts : ";
-  //   cin>>uts[i];
-  //  cout<<"Masukkan nilai UAS : ";
-  //   cin>>uas[i];
-    
-  //    nt = (tugas[i] + uts[i] + uas[i]);
-  //  cout<<"Nilai Akhir : "<<nt/3;
-  // }
-
-//   cout<<"\nNilai Akhir : ";
-//   for(int i=0; i<1; i++){
-//     na[i] = (tugas[i] + uts[i] + uas[i]) / 3;
-//   }
+    nt[i] = ((tugas[i]*0.2) + (uts[i]*0.35 )+ (uas[i]*0.45));
+   //cout<<"Nilai Akhir : "<<nt[i];
+  cout<<"\n===============================================================================\n";
+     }
+    cout<<"Nilai Rata-Rata ";
+   rata_tugas[j]=((tugas[0]+tugas[1]+tugas[2])/3);
+   cout<<rata_tugas[j]<<endl;
+   rata_uts[j]=((uts[0]+uts[1]+uts[2])/3);
+   cout<<rata_uts[j]<<endl;
+   rata_uas[j]=((uas[0]+uas[1]+uas[2])/3);
+   cout<<rata_uas[j]<<endl;
+   na[j]=((nt[0] + nt[1]+ nt[2])/3);
+   cout<<na[j]<<endl;
+   }
+  
+  
 } 
 
-void nilai::output(){
-cout<<"\n===============================================================================\n";
+void nilai::output(){ 
+  cout<<setiosflags(ios::left)<<nama[0];
+  cout<<"\n===============================================================================\n";
+  cout<<"||\tMata Kuliah\t||\tTugas\t||\tUTS\t||\tUAS\t||\tNilai Akhir\t||\n";
+  cout<<"===============================================================================\n";
 
-  cout<<"||\tMata Kuliah\t||\tTugas\t||\tUTS\t||\tUAS\t||\tNilai Akhir\t||";
-  cout<<"||\tAlpro\t||\t"<<tugas[5]<<"\t||\t"<<uts[5]<<"\t||\t"<<uas[5]<<"\t||\t\t"<<na[10]<<"\t||"<<endl;
-  cout<<"||\tPweb\t\t||"<<tugas[5]<<"\t||\t"<<uts[5]<<"\t||\t"<<uas[5]<<"\t||\t"<<na[10]<<"\t\t||"<<endl;
-  cout<<"||\tMatdis\t\t||"<<tugas[5]<<"\t||\t"<<uts[5]<<"\t||\t"<<uas[5]<<"\t||\t"<<na[10]<<"\t||"<<endl;
-  cout<<"||\trata-rata\t||\t"<<rata_tugas[5]<<"\t||\t"<<rata_uts[5]<<"\t||\t"<<rata_uas[5]<<"\t||\t"<<rata[5]<<"\t||";
-
-  
-//   for(int i =0; i<jml_matkul; i++){ 
-//     cout<<i+1<<". "<<matkul[i]<< "  " <<sks[i]<<" SKS"<<endl;
-//   }
-
-//   cout<<"\nTotal sks : "<<jml_sks<<endl;
-//   cout<<"Total bayar : "<<bayar<<endl; 
-// 
+  for(int i=0; i<jml_matkul; i++){  
+    cout<<setiosflags(ios::left)<<"\t\t"<<setw(10)<<matkul[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<tugas[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<uts[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<uas[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<nt[i];
+    cout<<endl;
   }
+  cout<<"Nilai Rata-Rata : ";
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<rata_tugas[0];
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<rata_uts[0];
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<rata_uas[0];
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<na[0];
+
+
+  cout<<"\n\n\n";
+  
+  cout<<setiosflags(ios::left)<<nama[1];
+  cout<<"\n===============================================================================\n";
+  cout<<"||\tMata Kuliah\t||\tTugas\t||\tUTS\t||\tUAS\t||\tNilai Akhir\t||\n";
+  cout<<"===============================================================================\n";  
+  for(int i=0; i<jml_matkul; i++){  
+    cout<<setiosflags(ios::left)<<"\t\t"<<setw(10)<<matkul[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<tugas[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<uts[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<uas[i];
+    cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<nt[i];
+    cout<<endl; 
+  }
+  cout<<"Nilai Rata-Rata : ";
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<rata_tugas[1];
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<rata_uts[1];
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<rata_uas[1];
+  cout<<setiosflags(ios::left)<<"\t"<<setw(10)<<na[1];
+}
 
 int main(){
-  nilai X;
-  X.input();
-  X.output();
+  nilai smt;
+  smt.input();
+  smt.output();
   return 0;
 }
