@@ -1,0 +1,7 @@
+Buatlah program dimana dosen dapat menginputkan nilai secara dinamis.
+Output yang diharapkan :
+nama mahasiswa
+nama mata kuliah
+daftar nilai*
+rata-rata nilai disetiap daftar nilai
+*nilai tugas, nilai uts, nilai uas, dan nilai akhir(20% tugas + 35% uts + 45% uas)

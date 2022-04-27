@@ -1,0 +1,17 @@
+Nama : habibi
+Nama Matkul : alpro
+Nilai tugas : 90
+Nilai UTS : 90
+Nilai UAS : 90
+Nilai Akhir: 90
+Nama Matkul : Pweb
+Nilai tugas : 90
+Nilai UTS : 90
+Nilai UAS : 90
+Nilai Akhir: 90
+Nama Matkul : Matdis
+Nilai tugas : 90
+Nilai UTS : 90
+Nilai UAS : 90
+Nilai Akhir: 90
+Rata-rata : 90
